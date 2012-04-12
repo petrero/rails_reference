@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   caches_page :index, :show
+  cache_sweeper :product_sweeper
   def index
     @products = Product.page(params[:page]).per_page(10)
   end
@@ -28,10 +29,6 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update_attributes(params[:product])
-      expire_page products_path
-      expire_page product_path(@page)
-      expire_page "/"
-      FileUtils.rm_rf "#{page_cache_directory}/products/page"
       redirect_to products_url, notice: "Successfully updated product."
     else
       render :edit
