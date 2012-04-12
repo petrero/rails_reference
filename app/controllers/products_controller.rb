@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   caches_page :index, :show
+  before_filter(only: [:index, :show]) {@page_caching = true}  
   cache_sweeper :product_sweeper
   def index
     @products = Product.page(params[:page]).per_page(10)
