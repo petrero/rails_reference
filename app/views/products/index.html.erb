@@ -1,5 +1,5 @@
 <h1>Products</h1>
-
+<%= paginate @products %>
 <% for product in @products %>
   <div class="product">
     <h2><%= link_to product.name, product %></h2>
