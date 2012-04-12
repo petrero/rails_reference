@@ -1,5 +1,5 @@
 <h1>Products</h1>
-<%= will_paginate @products %>
+<%= will_paginate @products, :previous_label => h('<'),  :next_label => h('>') %>
 <% for product in @products %>
   <div class="product">
     <h2><%= link_to product.name, product %></h2>
