@@ -9,7 +9,7 @@
   </div>
   <div class="field">
     <%= f.label :category_name %><br />
-    <%= f.text_field :category_name %>
+    <%= f.text_field :category_name, data: {autocomplete_source: Category.order(:name).map(&:name)} %>
   </div>
   <div class="actions">
     <%= f.submit %>
