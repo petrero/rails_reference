@@ -108,8 +108,7 @@ form .field, form .actions {
     margin-right: 1px;
   }
   .disabled {
-    color: #999999;
-    border: 1px solid #dddddd;
+    display: none
   }
   .current {
     font-style: normal;
