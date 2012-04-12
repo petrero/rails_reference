@@ -22,6 +22,10 @@ end
 
 gem 'jquery-rails'
 
+group :profiling do
+  gem 'ruby-prof'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
