@@ -1,0 +1,3 @@
+rails s -e staging
+rails c staging
+RAILS_ENV=staging rails s
