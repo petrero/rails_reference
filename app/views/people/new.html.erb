@@ -11,7 +11,7 @@
   </div>
   <div class="field">
     <%= f.label :state_id, "State or Province" %><br />
-    <%= f.collection_select :state_id, State.order(:name), :id, :name, include_blank: true %>
+    <%= f.grouped_collection_select :state_id, Country.order(:name), :states, :name, :id, :name, include_blank: true %>
   </div>
   <div class="actions"><%= f.submit %></div>
 <% end %>
