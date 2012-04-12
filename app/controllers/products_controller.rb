@@ -28,6 +28,8 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update_attributes(params[:product])
+      expire_page products_path
+      expire_page product_path(@page)
       redirect_to products_url, notice: "Successfully updated product."
     else
       render :edit
