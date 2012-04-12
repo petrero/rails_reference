@@ -38,4 +38,4 @@ Product.create!(name: "Rubber Ducky", price: 4.75)
 Product.create!(name: "Unicorn Action Figure", price: 8.75)
 Product.create!(name: "Rack", price: 32.49)
 Product.create!(name: "Model Train Rails", price: 45.00)
-Product.create!(name: "CanCan Music Record", price: 2.99)
+Product.create!(name: "CanCan Music Record", price: 2.99)rake 

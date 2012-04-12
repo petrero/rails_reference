@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  caches_page :index, :show
   def index
     @products = Product.page(params[:page]).per_page(10)
   end
