@@ -8,8 +8,8 @@
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :category_id %><br />
-    <%= f.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true %>
+    <%= f.label :category_name %><br />
+    <%= f.text_field :category_name %>
   </div>
   <div class="actions">
     <%= f.submit %>
