@@ -13,3 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require_tree ../../../vendor/assets/javascripts/src
+
+$(function(){
+  $('#book_author_tokens').tokenInput("/authors.json", {
+    crossDomain: false
+  })
+});

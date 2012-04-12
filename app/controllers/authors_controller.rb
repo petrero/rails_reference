@@ -3,7 +3,7 @@ class AuthorsController < ApplicationController
     @authors = Author.where("name like ?", "%#{params[:q]}%")
     respond_to do |format|
       format.html
-      format.json { render :json => @authors.map(&:attributes) }
+      format.json {render :json => @authors}
     end
   end
 
