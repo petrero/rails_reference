@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120413065554) do
+ActiveRecord::Schema.define(:version => 20120413070800) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -51,5 +51,14 @@ ActiveRecord::Schema.define(:version => 20120413065554) do
   end
 
   add_index "products", ["category_id"], :name => "index_products_on_category_id"
+
+  create_table "searches", :force => true do |t|
+    t.string   "keywords"
+    t.integer  "category_id"
+    t.decimal  "min_price"
+    t.decimal  "max_price"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
 end
