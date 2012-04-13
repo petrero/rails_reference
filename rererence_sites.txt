@@ -1,0 +1,6 @@
+http://github.com/smartinez87/exception_notification
+
+alternative gems:
+www.whoopsapp.com
+http://airbrakeapp.com/pages/home
+

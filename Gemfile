@@ -20,7 +20,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'letter_opener', :group => :development
+
 gem 'jquery-rails'
+gem 'exception_notification'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
