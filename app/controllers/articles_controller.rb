@@ -1,6 +1,9 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @search = Article.search do
+      fulltext params[:search]
+    end
+    @articles = @search.results
   end
 
   def show
