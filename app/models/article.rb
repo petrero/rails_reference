@@ -4,6 +4,10 @@ class Article < ActiveRecord::Base
   
   searchable do
     text :name, :boost => 5
-    text :content
+    text :content, :publish_month
+  end
+  
+  def publish_month
+    published_at.strftime("%B %Y")
   end
 end
