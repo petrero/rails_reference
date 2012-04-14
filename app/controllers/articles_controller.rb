@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
+  before_filter :load_blog
   def show
-    @article = Article.find(params[:id])
+    @article = @blog.articles.find(params[:id])
   end
 end
