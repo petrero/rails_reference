@@ -3,6 +3,7 @@ class Article < ActiveRecord::Base
   has_many :comments
   
   searchable do
-    text :name, :content
+    text :name, :boost => 5
+    text :content
   end
 end
