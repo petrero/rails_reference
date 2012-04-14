@@ -9,6 +9,7 @@ class Article < ActiveRecord::Base
       comments.map(&:content)
     end
     time :published_at
+    string :publish_month
   end
   
   def publish_month
