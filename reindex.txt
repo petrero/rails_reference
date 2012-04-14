@@ -1,0 +1,2 @@
+indexing existing records for sunspot
+rake sunspot:reindex
