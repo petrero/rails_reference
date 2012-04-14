@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   def index
     @search = Article.search do
       fulltext params[:search]
+      with(:published_at).less_than(Time.zone.now)
     end
     @articles = @search.results
   end

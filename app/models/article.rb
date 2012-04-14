@@ -5,6 +5,10 @@ class Article < ActiveRecord::Base
   searchable do
     text :name, :boost => 5
     text :content, :publish_month
+    text :comments do
+      comments.map(&:content)
+    end
+    time :published_at
   end
   
   def publish_month

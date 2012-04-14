@@ -1,2 +1,3 @@
 indexing existing records for sunspot
 rake sunspot:reindex
+https://github.com/outoftime/sunspot/
