@@ -18,7 +18,7 @@ module RailsReference
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
 
-    # Only load the plugins named here, in the order given (default is alphabetical).
+    # Only load the plugins named here, in the order given (default is alphabetical).`ps -axcr -o 'pid,pcpu,pmem,time,comm'`
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
 
@@ -55,5 +55,9 @@ module RailsReference
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    #config.middleware.use "ProcessesList"
+    #config.middleware.insert_before Rack::Lock, "ProcessesList"
+    config.middleware.insert_before 0, "ProcessesList"
   end
 end
