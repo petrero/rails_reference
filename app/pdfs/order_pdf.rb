@@ -1,9 +1,11 @@
 class OrderPdf < Prawn::Document
-  def initialize(order)
+  def initialize(order, view)
     super(top_margin: 70)
     @order = order
+    @view = view
     order_number
     line_items
+    total_price
   end 
   
   def order_number
@@ -22,7 +24,16 @@ class OrderPdf < Prawn::Document
   
   def line_item_rows
     [["Product", "Qty", "Unit Price", "Full Price"]] + @order.line_items.map do |item|
-      [item.name, item.quantity, item.unit_price, item.full_price]
+      [item.name, item.quantity, price(item.unit_price), price(item.full_price)]
     end
+  end
+  
+  def price(num)
+    @view.number_to_currency(num)
+  end
+  
+  def total_price
+    move_down 15
+    text "Total Price: #{price(@order.total_price)}", size: 16, style: :bold
   end
 end 
