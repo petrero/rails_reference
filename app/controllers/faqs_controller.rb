@@ -1,6 +1,6 @@
 class FaqsController < ApplicationController
   def index
-    @faqs = Faq.all
+    @faqs = Faq.order(:position)
   end
 
   def show
@@ -38,4 +38,11 @@ class FaqsController < ApplicationController
     @faq.destroy
     redirect_to faqs_url, notice: "Successfully destroyed FAQ."
   end  
+  
+  def sort
+    params[:faq].each_with_index do |id, index|
+      Faq.update_all({position: index+1}, {id: id})
+    end
+    render nothing: true
+  end
 end
