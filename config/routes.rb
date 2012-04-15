@@ -1,4 +1,4 @@
 RailsReference::Application.routes.draw do
   root to: 'processes#index'
-  match 'processes/list', to: 'processes#list'
+  match 'processes/old_list', to: 'processes#list'
 end
