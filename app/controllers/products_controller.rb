@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
+  #caches_page :index
   def index
     @products = Product.all
-    sleep 2
+    #sleep 2
   end
 
   def show
