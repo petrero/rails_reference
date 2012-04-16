@@ -20,6 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   
   gem 'delayed_job_active_record'
+  gem 'daemons'
 end
 
 gem 'jquery-rails'

@@ -1,0 +1,11 @@
+https://github.com/collectiveidea/delayed_job/wiki/Rails-3-and-Capistrano
+
+
+
+
+
+Easily view jobs enqueued, working, pending, and failed.
+Queue any single job. or all pending jobs, to run immediately.
+Remove a failed job, or easily remove all failed jobs.
+Watch delayed_job operation with live ajax polling:
+https://github.com/ejschmitt/delayed_job_web
