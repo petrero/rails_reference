@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
-  #caches_page :index
+  caches_page :index
   def index
+    @page_caching = true
     @products = Product.all
-    #sleep 2
+    sleep 2
   end
 
   def show
