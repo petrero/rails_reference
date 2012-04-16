@@ -1,0 +1,2 @@
+rake jobs:work
+start up delayed job (start a background process to handle the jobs provided in table delayed_jobs)
