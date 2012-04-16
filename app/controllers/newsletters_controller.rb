@@ -1,9 +1,9 @@
 class NewslettersController < ApplicationController
   def deliver
-    @newsletter = Newsletter.find(params[:id])
-    sleep 10 # simulate long newsletter delivery
-    @newsletter.update_attribute(:delivered_at, Time.zone.now)
-    redirect_to newsletters_url, notice: "Delivered newsletter."
+    #@newsletter = Newsletter.find(params[:id])
+    #@newsletter.delay.deliver
+    Newsletter.delay(queue: "newsletter", priority: 20, run_at: 5.minutes_from_now).deliver(params[:id])
+    redirect_to newsletters_url, notice: "Delivering newsletter."
   end
 
   def index
