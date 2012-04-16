@@ -1,4 +1,4 @@
-https://github.com/bvandenbos/resque-scheduler Ep271
+https://github.com/bvandenbos/resque-scheduler
 https://github.com/jmettraux/rufus-scheduler
 https://github.com/adamwiggins/clockwork
 
